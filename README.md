@@ -1,1 +1,1 @@
-The main code is at track_video2.py, the newest model is best (3).pt, you can ignore the rest 
+The main code is at track_video2.py, the newest model is best (3).pt, you can ignore the rest. The function def get_3d_keypoint_coordinates(head_2d, tail_2d, frame_width, frame_height) is for Khoa to add the oak D 3d 
