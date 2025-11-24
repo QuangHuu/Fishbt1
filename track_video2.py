@@ -1,5 +1,5 @@
 import cv2  # OpenCV for video processing and drawing
-from ultralytics import YOLO  # YOLOv10 for object detection and tracking
+from ultralytics import YOLO  # YOLOv8 for object detection and tracking
 import numpy as np  # For numerical operations
 import time  # For timing operations
 import yaml  # For saving/loading YAML config files
@@ -50,7 +50,7 @@ DEAD_TIMEOUT_MINUTES = 360  # Minutes before a fish is considered dead
 DEAD_TIMEOUT_FRAMES = DEAD_TIMEOUT_MINUTES * 60 * FPS  # Convert minutes to frames
 
 video_path = "C:\\Users\\occho\\fishbt\\ca loc.mp4"  # Path to the input video file
-model_path = 'best (3).pt'  # Path to the yolov10 model weights
+model_path = 'best (3).pt'  # Path to the yolov8 model weights
 temp_config_file = "temp_tracker_config.yaml"  # Temporary YAML file for tracker config
 
 # ---------------------------------------------------------------------
@@ -168,7 +168,7 @@ ax_bar.set_ylabel('Distance Traveled (Meters)')  # Set y label
 # --- MODEL & VIDEO SETUP ---
 # ---------------------------------------------------------------------
 
-model = YOLO(r"C:\Users\occho\fishbt\best (3).pt")  # Load YOLOv10 model
+model = YOLO(r"C:\Users\occho\fishbt\best (3).pt")  # Load YOLOv8 model
 cap = cv2.VideoCapture(video_path)  # Open video file
 if not cap.isOpened():  # If video cannot be opened
     print(f"Error: Could not open video file at {video_path}")  # Print error
@@ -185,7 +185,7 @@ total_unique_fish = 0  # Initialize total unique fish counter
 seen_track_ids = set()  # Set to store all seen fish IDs
 
 tracker_config_path = load_tracker_config(tracker_config)  # Save tracker config to YAML
-results_generator = model.track(  # Start YOLOv10 tracking
+results_generator = model.track(  # Start YOLOv8 tracking
     source=video_path,
     show=False,
     persist=True,
