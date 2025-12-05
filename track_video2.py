@@ -29,7 +29,7 @@ tracker_config = {  # Configuration dictionary for ByteTrack tracker
     'fuse_score': True  # Fuse scores for tracking
 }
 
-CONNECTION_STRING = "mongodb+srv://fish-tracker-admin:admin@cluster0.1oleyi6.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0"  # MongoDB Atlas connection string
+CONNECTION_STRING = "mongodb+srv://admin:helloadmin123@fish.caqok5c.mongodb.net/?appName=Fish"  # MongoDB Atlas connection string
 try:
     client = MongoClient(CONNECTION_STRING, serverSelectionTimeoutMS=5000, tls=True, tlsAllowInvalidCertificates=True)  # Connect to MongoDB Atlas
     client.admin.command('ping')  # Test the connection
@@ -377,3 +377,4 @@ finally:
     if temp_file.exists():  # If temp file exists
         temp_file.unlink()  # Delete temp file
     print("Video processing and cleanup complete.")  # Print finish message
+
